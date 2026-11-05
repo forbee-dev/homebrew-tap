@@ -1,6 +1,6 @@
 cask "buddy" do
-  version "0.3.0"
-  sha256 "f8fe9740a33d633e48e05ecae62e89119c34b79fc58a58118a492c4f27e79760"
+  version "0.5.0"
+  sha256 "f3550c89b3e811379dce2542ba7d4a5d27cece45fdb71cacf72e7a98cb333205"
 
   url "https://github.com/forbee-dev/buddy/releases/download/v#{version}/Buddy-#{version}.dmg"
   name "Buddy"
@@ -17,8 +17,6 @@ cask "buddy" do
   ]
 
   caveats <<~EOS
-    Buddy is not notarized. If macOS blocks it, run:
-      xattr -dr com.apple.quarantine /Applications/Buddy.app
-    Or open System Settings > Privacy & Security and click "Open Anyway".
+    Buddy is not notarized yet. On first open, go to System Settings → Privacy & Security → Open Anyway.
   EOS
 end
