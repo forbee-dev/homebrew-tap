@@ -1,6 +1,6 @@
 cask "buddy" do
-  version "0.5.0"
-  sha256 "f3550c89b3e811379dce2542ba7d4a5d27cece45fdb71cacf72e7a98cb333205"
+  version "1.0.0"
+  sha256 "12ad063bb9acb8c5a198ae42ce0f0e0aeac18bce5d8550208ed3de2f3df652ff"
 
   url "https://github.com/forbee-dev/buddy/releases/download/v#{version}/Buddy-#{version}.dmg"
   name "Buddy"
@@ -16,7 +16,13 @@ cask "buddy" do
     "~/Library/Preferences/com.tiagosantos.buddy.plist",
   ]
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   caveats <<~EOS
-    Buddy is not notarized yet. On first open, go to System Settings → Privacy & Security → Open Anyway.
+    The DMG is signed with a self-signed certificate and is not notarized.
+    On first open, go to System Settings → Privacy & Security → Open Anyway.
   EOS
 end
